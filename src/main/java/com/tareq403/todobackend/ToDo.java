@@ -6,6 +6,7 @@ public class ToDo {
     @Id
     private String id;
     private String name;
+    private String details;
     private boolean done;
 
     public String getId() {
@@ -30,5 +31,13 @@ public class ToDo {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 }

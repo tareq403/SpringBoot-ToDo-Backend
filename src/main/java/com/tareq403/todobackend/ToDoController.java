@@ -33,6 +33,7 @@ public class ToDoController {
                 .map(toDo -> {
                     toDo.setName(newToDo.getName());
                     toDo.setDone(newToDo.isDone());
+                    toDo.setDetails(newToDo.getDetails());
                     return repository.save(toDo);
                 })
                 .orElseGet(() -> {
