@@ -1,6 +1,6 @@
 # SpringBoot ToDo Backend
-This is a simple project demonstrate how to prepare a RESTful CRUD backend server
-with SpringBoot framework. In this project, we prepare a simple **_Todo_** model with
+This is a simple project demonstrate how to prepare a [RESTful](https://restfulapi.net/) CRUD backend server
+with [SpringBoot](https://spring.io/) framework. In this project, we prepare a simple **_Todo_** model with
 few fields and expose API for read all instances, read single instance by _id_,
 create a new instance, update an instance by _id_ and deleting an instance by _id_.
 
@@ -8,6 +8,11 @@ We have allowed CORS to accept API requests from different origin, which is usef
 for the [frontend project](https://github.com/tareq403/VueJS-ToDo-Frontend).
 
 We have used [MongoDB](https://www.mongodb.com/) as the database of this project.
+
+### Before you start
+You will need Java Development Toolkit and MongoDB installed in your system to implement this project.
+Official Spring website (https://spring.io/) recomends [AdoptOpenJDK](https://adoptopenjdk.net/).
+You will have detailed instruction to install and set up MongoDB in your system [here](https://docs.mongodb.com/manual/installation/).
 
 ## Initializing the project
 The project is initiated using [Spring Initializr](https://start.spring.io/). Go to
