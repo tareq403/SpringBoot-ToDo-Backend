@@ -34,8 +34,8 @@ package and work on it.
 The project initiated with Spring Initializr is instantly runnable. The project directory will contain
 the following files or directories:
 * *src* directory to accommodate your source codes.
-⋅⋅* *main* directory to accommodate your project source codes.
-⋅⋅* *test* directory to accommodate your test classes.
+  * *main* directory to accommodate your project source codes.
+  * *test* directory to accommodate your test classes.
 * *build.gradle* will hold your build configurations.
 * *gradlew* / *gradlew.bat* to run the project depending on your OS.
 * *settings.gradle* to hold the settings for gradle.
