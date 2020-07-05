@@ -215,7 +215,7 @@ Please note that, we are running our server in `localhost:8070`. You can change 
 server.port=8070
 ```
 
-First, check getting all ToDo entries:
+#### First, check getting all ToDo entries:
 * **Request URL:** http://localhost:8070/todo
 * **Request Method:** GET
 * **Request Header:** {"Content-Type": "application/json"}
@@ -227,7 +227,7 @@ We get the following response from this request:
 ```
 It indicates that the API is working. It returned an empty array because we did not create any ToDo yet.
 
-Let's create a couple of ToDo entries:
+#### Let's create a couple of ToDo entries:
 * **Request URL:** http://localhost:8070/todo
 * **Request Method:** POST
 * **Request Header:** {"Content-Type": "application/json"}
@@ -251,7 +251,7 @@ Response of the above request:
 }
 ```
 
-The second one:
+#### The second one:
 * **Request URL:** http://localhost:8070/todo
 * **Request Method:** POST
 * **Request Header:** {"Content-Type": "application/json"}
@@ -275,7 +275,7 @@ Response of the above request:
 }
 ```
 
-Now, let's check again to read all ToDos:
+#### Now, let's check again to read all ToDos:
 * **Request URL:** http://localhost:8070/todo
 * **Request Method:** GET
 * **Request Header:** {"Content-Type": "application/json"}
@@ -299,7 +299,7 @@ We get the following response from this request:
 ]
 ```
 
-Checking retrieval of individual ToDo by id:
+#### Checking retrieval of individual ToDo by id:
 * **Request URL:** http://localhost:8070/todo/5f01822da0a607141dc94d30
 * **Request Method:** GET
 * **Request Header:** {"Content-Type": "application/json"}
@@ -315,7 +315,7 @@ We get the following response from this request:
 }
 ```
 
-Try updating a ToDo instance:
+#### Try updating a ToDo instance:
 * **Request URL:** http://localhost:8070/todo/5f01822da0a607141dc94d30
 * **Request Method:** PUT
 * **Request Header:** {"Content-Type": "application/json"}
@@ -339,14 +339,14 @@ We get the following response from this request:
 }
 ```
 
-Checking if deletion by id is working:
+#### Checking if deletion by id is working:
 * **Request URL:** http://localhost:8070/todo/5f018241a0a607141dc94d31
 * **Request Method:** DELETE
 * **Request Header:** {"Content-Type": "application/json"}
 We get the following response from this request:
 * **Status:** 200 OK
 
-Finally, checking if things went as expected by reading all the ToDo entries again:
+#### Finally, checking if things went as expected by reading all the ToDo entries again:
 * **Request URL:** http://localhost:8070/todo
 * **Request Method:** GET
 * **Request Header:** {"Content-Type": "application/json"}
