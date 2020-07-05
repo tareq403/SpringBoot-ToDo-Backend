@@ -204,3 +204,164 @@ To enable CORS, we add the following code snippet in the `TodobackendApplication
         };
     }
 ```
+
+## Testing the Rest API endpoints
+We are using [Postman](https://www.postman.com/) to test our API endpoints. Postman is a very nice
+tool to test and document your API and share across your team.
+
+Please note that, we are running our server in `localhost:8070`. You can change the port from
+`src/main/resources/application.properties` file. We have set the port property by this line:
+```
+server.port=8070
+```
+
+First, check getting all ToDo entries:
+* **Request URL:** http://localhost:8070/todo
+* **Request Method:** GET
+* **Request Header:** {"Content-Type": "application/json"}
+We get the following response from this request:
+* **Status:** 200 OK
+* **Response Body:**
+```json
+[]
+```
+It indicates that the API is working. It returned an empty array because we did not create any ToDo yet.
+
+Let's create a couple of ToDo entries:
+* **Request URL:** http://localhost:8070/todo
+* **Request Method:** POST
+* **Request Header:** {"Content-Type": "application/json"}
+* **Request Body:**
+```json
+{
+	"name": "Task 1",
+	"details": "I have to complete task 1.",
+	"done": false
+}
+```
+Response of the above request:
+* **Status:** 200 OK
+* **Response Body:**
+```json
+{
+    "id": "5f01822da0a607141dc94d30",
+    "name": "Task 1",
+    "details": "I have to complete task 1.",
+    "done": false
+}
+```
+
+The second one:
+* **Request URL:** http://localhost:8070/todo
+* **Request Method:** POST
+* **Request Header:** {"Content-Type": "application/json"}
+* **Request Body:**
+```json
+{
+	"name": "Task 2",
+	"details": "I have to complete task 2, too.",
+	"done": false
+}
+```
+Response of the above request:
+* **Status:** 200 OK
+* **Response Body:**
+```json
+{
+    "id": "5f018241a0a607141dc94d31",
+    "name": "Task 2",
+    "details": "I have to complete task 2, too.",
+    "done": false
+}
+```
+
+Now, let's check again to read all ToDos:
+* **Request URL:** http://localhost:8070/todo
+* **Request Method:** GET
+* **Request Header:** {"Content-Type": "application/json"}
+We get the following response from this request:
+* **Status:** 200 OK
+* **Response Body:**
+```json
+[
+    {
+        "id": "5f01822da0a607141dc94d30",
+        "name": "Task 1",
+        "details": "I have to complete task 1.",
+        "done": false
+    },
+    {
+        "id": "5f018241a0a607141dc94d31",
+        "name": "Task 2",
+        "details": "I have to complete task 2, too.",
+        "done": false
+    }
+]
+```
+
+Checking retrieval of individual ToDo by id:
+* **Request URL:** http://localhost:8070/todo/5f01822da0a607141dc94d30
+* **Request Method:** GET
+* **Request Header:** {"Content-Type": "application/json"}
+We get the following response from this request:
+* **Status:** 200 OK
+* **Response Body:**
+```json
+{
+    "id": "5f01822da0a607141dc94d30",
+    "name": "Task 1",
+    "details": "I have to complete task 1.",
+    "done": false
+}
+```
+
+Try updating a ToDo instance:
+* **Request URL:** http://localhost:8070/todo/5f01822da0a607141dc94d30
+* **Request Method:** PUT
+* **Request Header:** {"Content-Type": "application/json"}
+* **Request Body:**
+```json
+{
+    "name": "Task 1",
+    "details": "I have to complete task 1.",
+    "done": true
+}
+```
+We get the following response from this request:
+* **Status:** 200 OK
+* **Response Body:**
+```json
+{
+    "id": "5f01822da0a607141dc94d30",
+    "name": "Task 1",
+    "details": "I have to complete task 1.",
+    "done": true
+}
+```
+
+Checking if deletion by id is working:
+* **Request URL:** http://localhost:8070/todo/5f018241a0a607141dc94d31
+* **Request Method:** DELETE
+* **Request Header:** {"Content-Type": "application/json"}
+We get the following response from this request:
+* **Status:** 200 OK
+
+Finally, checking if things went as expected by reading all the ToDo entries again:
+* **Request URL:** http://localhost:8070/todo
+* **Request Method:** GET
+* **Request Header:** {"Content-Type": "application/json"}
+We get the following response from this request:
+* **Status:** 200 OK
+* **Response Body:**
+```json
+[
+    {
+        "id": "5f01822da0a607141dc94d30",
+        "name": "Task 1",
+        "details": "I have to complete task 1.",
+        "done": true
+    }
+]
+```
+
+Thus, we have confirmed that, all our API endpoints are working as expected.
